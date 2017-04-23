@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace LibrarinProject
 {
+    //register user, 2 is for admin, 1 is for regular user, 3 is for root but there's only one root
     public partial class RegisterUserForm : Form
     {
         public RegisterUserForm()

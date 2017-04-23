@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
 
+//for requesting books uses list view box and a request button that gets the selected book checked out if its status is in
+
+//find a way to make it able to display better
+
+
 namespace LibrarinProject
 {
     public partial class BookRequestForm : Form
@@ -22,9 +27,9 @@ namespace LibrarinProject
         {
             List<Book> bookList = new List<Book>();
             LibraryConnector myConnector = new LibraryConnector();
-            bookList = myConnector.getBooks();
-            ArrayList bookArrayList = new ArrayList(bookList);
-            lbBookList.DataSource = bookList;
+            bookList = myConnector.getBooks(); //open connection with site, get json blob, convert json blob into Book list, return book list into here
+            ArrayList bookArrayList = new ArrayList(bookList); //convert to ArrayList becaues the datasource can't be just a regular list
+            lbBookList.DataSource = bookList;   //set data source items cannot be edited/seleted after data source is set
             Console.Write("for debugging");
         }
 
@@ -32,7 +37,10 @@ namespace LibrarinProject
         {
             LibraryConnector myConnector = new LibraryConnector();
             Book myBook = (Book) lbBookList.SelectedItem;
-            myConnector.requestBook(myBook.ISBN);
+            if (myBook.status == "in")
+            {
+                myConnector.requestBook(myBook.ISBN);
+            }
         }
     }
 }

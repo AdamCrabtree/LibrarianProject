@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Admin form for navigation to requesting a book, adding a book, adding a user, add options to edit username/password sometime
+/// </summary>
+
 namespace LibrarinProject
 {
     public partial class AdminForm : Form
@@ -17,10 +21,15 @@ namespace LibrarinProject
         {
             InitializeComponent();
             this.currentUser = currentUser;
-            if (!currentUser.role.Equals("3"))
+            if (!currentUser.role.Equals("3")) //if user is not root
             {
                 bAddUser.Hide();
             }
+            if (!currentUser.role.Equals("2") && !currentUser.role.Equals("3")) //if user is not admin nor root
+            {
+                bAddBook.Hide();
+            }
+            lWelcome.Text = "Welcome " + currentUser.username; 
         }
 
         private void bAddUser_Click(object sender, EventArgs e)

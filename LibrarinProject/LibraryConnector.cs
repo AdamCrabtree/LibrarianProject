@@ -6,6 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+/// <summary>
+/// For actually connecting to the database/website. It calls direct website request urls and 
+/// returns Json blob as a byte array which we encode into actual ascii text and then parse with Newtonsoft.Json
+/// A lot of code is repeated. There might be some way to make it cleaner
+/// </summary>
 
 namespace LibrarinProject
 {

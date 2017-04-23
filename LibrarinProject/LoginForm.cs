@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//launch form everything starts with this and you try to log in
 namespace LibrarinProject
 {
+ 
     public partial class LoginForm : Form
     {
         public LoginForm()
@@ -24,20 +25,20 @@ namespace LibrarinProject
             try
             {
                 User currentUser = myConnection.Login(bUsername.Text, bPassword.Text);
-                if (currentUser.success.Equals("true") && (currentUser.role.Equals("2") || currentUser.role.Equals("3"))) //request goes through correctly and assigns to currentUser
+                if (currentUser.success.Equals("true")) //request goes through correctly and assigns to currentUser
                 {
-                    AdminForm newForm = new LibrarinProject.AdminForm(currentUser);
-                    newForm.Show();
+                    AdminForm adminForm = new LibrarinProject.AdminForm(currentUser);//the admin form takes in the current user to keep track of who's logged in
+                    adminForm.Show();
                     this.Hide();
                 }
                 else
                 {
-                    tFailedLogin.Text = "Login Failed";
+                    tFailedLogin.Text = "Login Failed"; //if something not related to the serialization went wrong. This shouldn't happen. 
                 }
             }
             catch
             {
-                tFailedLogin.Text = "Login Failed"; //json object didn't serialize correctly so its null
+                tFailedLogin.Text = "Login Failed"; //json object didn't serialize correctly so current user is null so the try will fail and will fall down to here
             }           
         }
     }

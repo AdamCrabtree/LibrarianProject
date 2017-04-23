@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+//add book to database. probably should also add ability to edit a book and add a listview with all books already there
+
 namespace LibrarinProject
 {
     public partial class AddBookForm : Form
