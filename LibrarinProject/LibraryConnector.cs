@@ -36,11 +36,11 @@ namespace LibrarinProject
                 }
                 catch
                 {
-                    return null;
+                    return null; //if the json deserialization fails that means that the login failed so it will return no current user logged in to the Login Form
                 }
             }
         }
-        public void Register(String username, String password, String role, String name) //register new user
+        public User Register(String username, String password, String role, String name) //register new user
         {
             using (var WebClient = connectorClient)
             {
@@ -51,10 +51,18 @@ namespace LibrarinProject
                 dataToSend["name"] = name; //assign all data
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/libraryregister.php", dataToSend); //send data to database
                 string result = System.Text.Encoding.UTF8.GetString(byteResult);
-                Console.Write(result); //check if anything broke 
+                try
+                {
+                    User currentUser = JsonConvert.DeserializeObject<User>(result); //deserialize json response into user object to keep track of who's logged in
+                    return currentUser;
+                }
+                    catch
+                {
+                    return null; //if the json deserialization fails that means that the login failed so it will return no current user logged in to the Login Form
+                }
             }
         }
-      public void addBook(String title, String ISBN, String author)
+      public Boolean addBook(String title, String ISBN, String author)
         {
             using (var WebClient = connectorClient)
             {
@@ -65,7 +73,15 @@ namespace LibrarinProject
                 dataToSend["ISBN"] = ISBN;
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/addBook.php", dataToSend); //send data to database
                 string result = System.Text.Encoding.UTF8.GetString(byteResult);
-                Console.Write(result); //check if anything broke
+                if (result.Equals("book already exists")) //check is book is already in database
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
             }
         }
      public List<Book> getBooks()
@@ -88,8 +104,6 @@ namespace LibrarinProject
                 dataToSend["ISBN"] = ISBN;
                 dataToSend["Status"] = "out";
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/requestBook.php", dataToSend); //send the ISBN and change status to out
-                string result = System.Text.Encoding.UTF8.GetString(byteResult);
-                Console.Write(result);
       
             }
         }

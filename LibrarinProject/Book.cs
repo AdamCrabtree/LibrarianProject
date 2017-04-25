@@ -14,6 +14,7 @@ namespace LibrarinProject
         public string author { get; set; }
         public string ISBN { get; set; }
         public string status { get; set; }
+        public string success { get; set; } //this actually has nothing to do with the book itself. it's a check if adding a book was successful
 
         public override string ToString() //overriden to string so that the list view calls this
         {

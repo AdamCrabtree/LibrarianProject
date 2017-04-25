@@ -33,12 +33,12 @@ namespace LibrarinProject
                 }
                 else
                 {
-                    tFailedLogin.Text = "Login Failed"; //if something not related to the serialization went wrong. This shouldn't happen. 
+                    tFailedLogin.Text = "Login Failed. Username or password is incorrect."; //if something not related to the serialization went wrong. This shouldn't happen. 
                 }
             }
             catch
             {
-                tFailedLogin.Text = "Login Failed"; //json object didn't serialize correctly so current user is null so the try will fail and will fall down to here
+                tFailedLogin.Text = "Login Failed. Username or password is incorrect."; //json object didn't serialize correctly so current user is null so the try will fail and will fall down to here
             }           
         }
     }

@@ -74,7 +74,7 @@ namespace LibrarinProject
             // tFailedLogin
             // 
             this.tFailedLogin.AutoSize = true;
-            this.tFailedLogin.Location = new System.Drawing.Point(83, 186);
+            this.tFailedLogin.Location = new System.Drawing.Point(15, 192);
             this.tFailedLogin.Name = "tFailedLogin";
             this.tFailedLogin.Size = new System.Drawing.Size(0, 13);
             this.tFailedLogin.TabIndex = 3;

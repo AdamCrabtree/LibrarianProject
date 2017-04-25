@@ -34,22 +34,30 @@ namespace LibrarinProject
 
         private void bAddUser_Click(object sender, EventArgs e)
         {
-            RegisterUserForm register = new RegisterUserForm();
+            RegisterUserForm register = new RegisterUserForm(currentUser);
             register.Show();
             this.Hide();
         }
 
         private void bAddBook_Click(object sender, EventArgs e)
         {
-            AddBookForm addBookForm = new AddBookForm();
+            AddBookForm addBookForm = new AddBookForm(currentUser);
             addBookForm.Show();
             this.Hide();
         }
 
         private void bRequestBook_Click(object sender, EventArgs e)
         {
-            BookRequestForm bookRequestForm = new BookRequestForm();
+            BookRequestForm bookRequestForm = new BookRequestForm(currentUser);
             bookRequestForm.Show();
+            this.Hide();
+        }
+
+        private void bLogout_Click(object sender, EventArgs e)
+        {
+            currentUser = null;
+            LoginForm loginForm = new LibrarinProject.LoginForm();
+            loginForm.Show();
             this.Hide();
         }
     }
