@@ -47,8 +47,8 @@
             this.bRequestBook.Location = new System.Drawing.Point(165, 238);
             this.bRequestBook.Name = "bRequestBook";
             this.bRequestBook.Size = new System.Drawing.Size(75, 23);
-            this.bRequestBook.TabIndex = 4;
-            this.bRequestBook.Text = "Requst Book";
+            this.bRequestBook.TabIndex = 1;
+            this.bRequestBook.Text = "Request Book";
             this.bRequestBook.UseVisualStyleBackColor = true;
             this.bRequestBook.Click += new System.EventHandler(this.bRequestBook_Click);
             // 
@@ -65,7 +65,7 @@
             this.bBack.Location = new System.Drawing.Point(3, 3);
             this.bBack.Name = "bBack";
             this.bBack.Size = new System.Drawing.Size(75, 23);
-            this.bBack.TabIndex = 6;
+            this.bBack.TabIndex = 2;
             this.bBack.Text = "Go Back";
             this.bBack.UseVisualStyleBackColor = true;
             this.bBack.Click += new System.EventHandler(this.bBack_Click);

@@ -93,7 +93,7 @@
             this.bRegister.Location = new System.Drawing.Point(87, 181);
             this.bRegister.Name = "bRegister";
             this.bRegister.Size = new System.Drawing.Size(99, 23);
-            this.bRegister.TabIndex = 6;
+            this.bRegister.TabIndex = 5;
             this.bRegister.Text = "Register";
             this.bRegister.UseVisualStyleBackColor = true;
             this.bRegister.Click += new System.EventHandler(this.bRegister_Click);
@@ -104,7 +104,7 @@
             this.cbAdminCheck.Location = new System.Drawing.Point(55, 158);
             this.cbAdminCheck.Name = "cbAdminCheck";
             this.cbAdminCheck.Size = new System.Drawing.Size(172, 17);
-            this.cbAdminCheck.TabIndex = 7;
+            this.cbAdminCheck.TabIndex = 4;
             this.cbAdminCheck.Text = "Please check if admin account";
             this.cbAdminCheck.UseVisualStyleBackColor = true;
             // 
@@ -121,7 +121,7 @@
             this.bBack.Location = new System.Drawing.Point(-5, -1);
             this.bBack.Name = "bBack";
             this.bBack.Size = new System.Drawing.Size(75, 23);
-            this.bBack.TabIndex = 9;
+            this.bBack.TabIndex = 6;
             this.bBack.Text = "Back";
             this.bBack.UseVisualStyleBackColor = true;
             this.bBack.Click += new System.EventHandler(this.bBack_Click);

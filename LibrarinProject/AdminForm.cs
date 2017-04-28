@@ -55,9 +55,16 @@ namespace LibrarinProject
 
         private void bLogout_Click(object sender, EventArgs e)
         {
-            currentUser = null;
             LoginForm loginForm = new LibrarinProject.LoginForm();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void bAccount_Click(object sender, EventArgs e)
+        {
+            lWelcome.Text = "welcome" + currentUser.name;
+            AccountForm accountForm = new AccountForm(this.currentUser);
+            accountForm.Show();
             this.Hide();
         }
     }

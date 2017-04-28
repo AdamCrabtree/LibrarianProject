@@ -55,7 +55,7 @@ namespace LibrarinProject
             this.bLogin.Location = new System.Drawing.Point(86, 141);
             this.bLogin.Name = "bLogin";
             this.bLogin.Size = new System.Drawing.Size(75, 23);
-            this.bLogin.TabIndex = 1;
+            this.bLogin.TabIndex = 2;
             this.bLogin.Tag = "bLogin";
             this.bLogin.Text = "Login";
             this.bLogin.UseCompatibleTextRendering = true;
@@ -68,7 +68,7 @@ namespace LibrarinProject
             this.bPassword.Location = new System.Drawing.Point(74, 86);
             this.bPassword.Name = "bPassword";
             this.bPassword.Size = new System.Drawing.Size(100, 20);
-            this.bPassword.TabIndex = 2;
+            this.bPassword.TabIndex = 1;
             this.bPassword.Tag = "bPassword";
             // 
             // tFailedLogin
@@ -109,7 +109,7 @@ namespace LibrarinProject
             this.Controls.Add(this.bLogin);
             this.Controls.Add(this.bUsername);
             this.Name = "LoginForm";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

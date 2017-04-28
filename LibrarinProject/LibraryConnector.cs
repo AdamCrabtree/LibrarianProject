@@ -96,15 +96,37 @@ namespace LibrarinProject
                 return bookList;
             }
         }
-      public void requestBook(string ISBN)
+      public void requestBook(string ISBN, string user_id)
         {
             using (var WebClient = connectorClient)
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["ISBN"] = ISBN;
+                dataToSend["user_id"] = user_id;
                 dataToSend["Status"] = "out";
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/requestBook.php", dataToSend); //send the ISBN and change status to out
       
+            }
+        }
+      public void changePassword(string newPassword, string username) {
+                using (var WebClient = connectorClient)
+                {
+                    NameValueCollection dataToSend = new NameValueCollection();
+                    dataToSend["username"] = username;
+                    dataToSend["password"] = newPassword;
+                    byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/changepassword.php", dataToSend);
+                }
+            } 
+        public List<Book> getCheckedOutBooks(string user_id)
+        {
+            using (var WebClient = connectorClient)
+            {
+                NameValueCollection dataToSend = new NameValueCollection();
+                dataToSend["user_id"] = user_id;
+                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/getCheckedOutBooks.php", dataToSend); 
+                string result = System.Text.Encoding.UTF8.GetString(byteResult);
+                List<Book> bookList = JsonConvert.DeserializeObject<List<Book>>(result);
+                return bookList;
             }
         }
     }

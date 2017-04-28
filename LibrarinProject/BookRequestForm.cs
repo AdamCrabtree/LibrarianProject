@@ -40,7 +40,7 @@ namespace LibrarinProject
             Book myBook = (Book) lbBookList.SelectedItem;
             if (myBook.status == "in")
             {
-                myConnector.requestBook(myBook.ISBN);
+                myConnector.requestBook(myBook.ISBN, currentUser.user_id);
                 bookList = myConnector.getBooks(); 
                 ArrayList updatedBookList = new ArrayList(this.bookList);
                 lbBookList.DataSource = updatedBookList;

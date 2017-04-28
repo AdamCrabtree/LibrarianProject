@@ -33,6 +33,7 @@
             this.bRequestBook = new System.Windows.Forms.Button();
             this.lWelcome = new System.Windows.Forms.Label();
             this.bLogout = new System.Windows.Forms.Button();
+            this.bAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bAddBook
@@ -40,7 +41,7 @@
             this.bAddBook.Location = new System.Drawing.Point(91, 90);
             this.bAddBook.Name = "bAddBook";
             this.bAddBook.Size = new System.Drawing.Size(69, 22);
-            this.bAddBook.TabIndex = 0;
+            this.bAddBook.TabIndex = 1;
             this.bAddBook.Text = "Add Book";
             this.bAddBook.UseVisualStyleBackColor = true;
             this.bAddBook.Click += new System.EventHandler(this.bAddBook_Click);
@@ -50,7 +51,7 @@
             this.bAddUser.Location = new System.Drawing.Point(91, 118);
             this.bAddUser.Name = "bAddUser";
             this.bAddUser.Size = new System.Drawing.Size(69, 22);
-            this.bAddUser.TabIndex = 1;
+            this.bAddUser.TabIndex = 2;
             this.bAddUser.Text = "Add User";
             this.bAddUser.UseVisualStyleBackColor = true;
             this.bAddUser.Click += new System.EventHandler(this.bAddUser_Click);
@@ -60,7 +61,7 @@
             this.bRequestBook.Location = new System.Drawing.Point(91, 61);
             this.bRequestBook.Name = "bRequestBook";
             this.bRequestBook.Size = new System.Drawing.Size(69, 23);
-            this.bRequestBook.TabIndex = 2;
+            this.bRequestBook.TabIndex = 0;
             this.bRequestBook.Text = "Request Book";
             this.bRequestBook.UseVisualStyleBackColor = true;
             this.bRequestBook.Click += new System.EventHandler(this.bRequestBook_Click);
@@ -80,16 +81,27 @@
             this.bLogout.Location = new System.Drawing.Point(203, 12);
             this.bLogout.Name = "bLogout";
             this.bLogout.Size = new System.Drawing.Size(69, 23);
-            this.bLogout.TabIndex = 4;
+            this.bLogout.TabIndex = 3;
             this.bLogout.Text = "Logout";
             this.bLogout.UseVisualStyleBackColor = true;
             this.bLogout.Click += new System.EventHandler(this.bLogout_Click);
+            // 
+            // bAccount
+            // 
+            this.bAccount.Location = new System.Drawing.Point(202, 41);
+            this.bAccount.Name = "bAccount";
+            this.bAccount.Size = new System.Drawing.Size(69, 23);
+            this.bAccount.TabIndex = 4;
+            this.bAccount.Text = "Account";
+            this.bAccount.UseVisualStyleBackColor = true;
+            this.bAccount.Click += new System.EventHandler(this.bAccount_Click);
             // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.bAccount);
             this.Controls.Add(this.bLogout);
             this.Controls.Add(this.lWelcome);
             this.Controls.Add(this.bRequestBook);
@@ -109,5 +121,6 @@
         private System.Windows.Forms.Button bRequestBook;
         private System.Windows.Forms.Label lWelcome;
         private System.Windows.Forms.Button bLogout;
+        private System.Windows.Forms.Button bAccount;
     }
 }

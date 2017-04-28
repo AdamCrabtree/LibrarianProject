@@ -65,7 +65,7 @@
             this.bAddBook.Location = new System.Drawing.Point(93, 183);
             this.bAddBook.Name = "bAddBook";
             this.bAddBook.Size = new System.Drawing.Size(75, 23);
-            this.bAddBook.TabIndex = 4;
+            this.bAddBook.TabIndex = 3;
             this.bAddBook.Text = "Add Book";
             this.bAddBook.UseVisualStyleBackColor = true;
             this.bAddBook.Click += new System.EventHandler(this.bAddBook_Click);
@@ -107,10 +107,10 @@
             // 
             // bBack
             // 
-            this.bBack.Location = new System.Drawing.Point(-2, 0);
+            this.bBack.Location = new System.Drawing.Point(197, 12);
             this.bBack.Name = "bBack";
             this.bBack.Size = new System.Drawing.Size(75, 23);
-            this.bBack.TabIndex = 9;
+            this.bBack.TabIndex = 4;
             this.bBack.Text = "Back";
             this.bBack.UseVisualStyleBackColor = true;
             this.bBack.Click += new System.EventHandler(this.bBack_Click);
