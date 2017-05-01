@@ -34,6 +34,7 @@
             this.lWelcome = new System.Windows.Forms.Label();
             this.bLogout = new System.Windows.Forms.Button();
             this.bAccount = new System.Windows.Forms.Button();
+            this.bEditBook = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bAddBook
@@ -96,11 +97,22 @@
             this.bAccount.UseVisualStyleBackColor = true;
             this.bAccount.Click += new System.EventHandler(this.bAccount_Click);
             // 
+            // bEditBook
+            // 
+            this.bEditBook.Location = new System.Drawing.Point(91, 147);
+            this.bEditBook.Name = "bEditBook";
+            this.bEditBook.Size = new System.Drawing.Size(69, 23);
+            this.bEditBook.TabIndex = 5;
+            this.bEditBook.Text = "Edit Book";
+            this.bEditBook.UseVisualStyleBackColor = true;
+            this.bEditBook.Click += new System.EventHandler(this.bEditBook_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.bEditBook);
             this.Controls.Add(this.bAccount);
             this.Controls.Add(this.bLogout);
             this.Controls.Add(this.lWelcome);
@@ -122,5 +134,6 @@
         private System.Windows.Forms.Label lWelcome;
         private System.Windows.Forms.Button bLogout;
         private System.Windows.Forms.Button bAccount;
+        private System.Windows.Forms.Button bEditBook;
     }
 }

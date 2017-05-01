@@ -19,7 +19,7 @@ namespace LibrarinProject
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void bChangePassword_Click(object sender, EventArgs e)
         {
             if(!(string.IsNullOrWhiteSpace(tpassword.Text) || string.IsNullOrWhiteSpace(tpassword.Text)) && tpassword.Text.Equals(tpassword2.Text)){
                 LibraryConnector pwChangeConnection = new LibraryConnector();

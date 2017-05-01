@@ -28,6 +28,8 @@ namespace LibrarinProject
             if (!currentUser.role.Equals("2") && !currentUser.role.Equals("3")) //if user is not admin nor root
             {
                 bAddBook.Hide();
+                bEditBook.Hide();
+               
             }
             lWelcome.Text = "Welcome " + currentUser.username; 
         }
@@ -66,6 +68,13 @@ namespace LibrarinProject
             AccountForm accountForm = new AccountForm(this.currentUser);
             accountForm.Show();
             this.Hide();
+        }
+
+        private void bEditBook_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            EditBookForm editBookForm = new EditBookForm(currentUser);
+            editBookForm.Show();
         }
     }
 }

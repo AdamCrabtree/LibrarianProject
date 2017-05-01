@@ -38,6 +38,8 @@
             this.cbAdminCheck = new System.Windows.Forms.CheckBox();
             this.lRegisterResult = new System.Windows.Forms.Label();
             this.bBack = new System.Windows.Forms.Button();
+            this.tbPassword = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tName
@@ -90,7 +92,7 @@
             // 
             // bRegister
             // 
-            this.bRegister.Location = new System.Drawing.Point(87, 181);
+            this.bRegister.Location = new System.Drawing.Point(90, 211);
             this.bRegister.Name = "bRegister";
             this.bRegister.Size = new System.Drawing.Size(99, 23);
             this.bRegister.TabIndex = 5;
@@ -101,7 +103,7 @@
             // cbAdminCheck
             // 
             this.cbAdminCheck.AutoSize = true;
-            this.cbAdminCheck.Location = new System.Drawing.Point(55, 158);
+            this.cbAdminCheck.Location = new System.Drawing.Point(55, 191);
             this.cbAdminCheck.Name = "cbAdminCheck";
             this.cbAdminCheck.Size = new System.Drawing.Size(172, 17);
             this.cbAdminCheck.TabIndex = 4;
@@ -126,11 +128,29 @@
             this.bBack.UseVisualStyleBackColor = true;
             this.bBack.Click += new System.EventHandler(this.bBack_Click);
             // 
+            // tbPassword
+            // 
+            this.tbPassword.Location = new System.Drawing.Point(127, 156);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(100, 20);
+            this.tbPassword.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 163);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(90, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Retype Password";
+            // 
             // RegisterUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.bBack);
             this.Controls.Add(this.lRegisterResult);
             this.Controls.Add(this.cbAdminCheck);
@@ -160,5 +180,7 @@
         private System.Windows.Forms.CheckBox cbAdminCheck;
         private System.Windows.Forms.Label lRegisterResult;
         private System.Windows.Forms.Button bBack;
+        private System.Windows.Forms.TextBox tbPassword;
+        private System.Windows.Forms.Label label4;
     }
 }

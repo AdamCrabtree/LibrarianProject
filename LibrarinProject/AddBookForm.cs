@@ -24,7 +24,7 @@ namespace LibrarinProject
         private void bAddBook_Click(object sender, EventArgs e)
         {
             LibraryConnector addBookConnection = new LibrarinProject.LibraryConnector();
-            if ((!string.IsNullOrWhiteSpace(tISBN.Text) || string.IsNullOrWhiteSpace(tAuthor.Text) || string.IsNullOrWhiteSpace(tTitle.Text)))
+            if ((!string.IsNullOrWhiteSpace(tISBN.Text) && !string.IsNullOrWhiteSpace(tAuthor.Text) && !string.IsNullOrWhiteSpace(tTitle.Text)))
             {
                 Boolean bookAdded = addBookConnection.addBook(tTitle.Text, tISBN.Text, tAuthor.Text);
                 if (bookAdded)

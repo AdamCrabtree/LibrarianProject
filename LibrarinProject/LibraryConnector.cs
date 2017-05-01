@@ -105,7 +105,9 @@ namespace LibrarinProject
                 dataToSend["user_id"] = user_id;
                 dataToSend["Status"] = "out";
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/requestBook.php", dataToSend); //send the ISBN and change status to out
-      
+                byte[] byteResult1 = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/changeBookStatus.php", dataToSend); //assign the book to user who checked it out
+                Console.WriteLine(byteResult1.ToString());
+
             }
         }
       public void changePassword(string newPassword, string username) {
@@ -127,6 +129,36 @@ namespace LibrarinProject
                 string result = System.Text.Encoding.UTF8.GetString(byteResult);
                 List<Book> bookList = JsonConvert.DeserializeObject<List<Book>>(result);
                 return bookList;
+            }
+        }
+        public void editBookTitle(String newTitle, String title)
+        {
+            using (var WebClient = connectorClient)
+            {
+                NameValueCollection dataToSend = new NameValueCollection();
+                dataToSend["Title"] = title;
+                dataToSend["newTitle"] = newTitle;
+                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editTitle.php", dataToSend);
+            }
+       }
+        public void editBookAuthor(String newAuthor, String author)
+        {
+            using (var WebClient = connectorClient)
+            {
+                NameValueCollection dataToSend = new NameValueCollection();
+                dataToSend["Author"] = author;
+                dataToSend["newAuthor"] = newAuthor;
+                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editAuthor.php", dataToSend);
+            }
+        }
+        public void editBookISBN(String newISBN, String ISBN)
+        {
+            using (var WebClient = connectorClient)
+            {
+                NameValueCollection dataToSend = new NameValueCollection();
+                dataToSend["ISBN"] = ISBN;
+                dataToSend["newISBN"] = ISBN;
+                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editISBN.php", dataToSend);
             }
         }
     }

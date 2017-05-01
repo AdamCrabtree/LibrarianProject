@@ -20,6 +20,8 @@ namespace LibrarinProject
             this.currentUser = currentUser;
             InitializeComponent();
             requestCheckedOutBooks();
+            lWelcome.Text = "Welcome";
+            lUsername.Text = currentUser.username;
         }
 
         private void bBack_Click(object sender, EventArgs e)

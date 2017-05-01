@@ -19,6 +19,7 @@ namespace LibrarinProject
         {
             this.currentUser = currentUser;
             InitializeComponent();
+
         }
 
         private void bRegister_Click(object sender, EventArgs e)
@@ -42,18 +43,35 @@ namespace LibrarinProject
             {
                 try
                 {
-                    User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "1", tName.Text);
-                    if (currentUser.success.Equals("true"))
+                    if ((!string.IsNullOrWhiteSpace(tUsername.Text) && !string.IsNullOrWhiteSpace(tPassword.Text) && !string.IsNullOrWhiteSpace(tName.Text) && !string.IsNullOrWhiteSpace(tbPassword.Text)))
                     {
-                        AdminForm adminForm = new AdminForm(currentUser);
-                        adminForm.Show();
-                        this.Hide();
+                        if (tPassword.Text.Equals(tbPassword.Text))
+                        {
+                            User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "1", tName.Text);
+                            if (currentUser.success.Equals("true"))
+                            {
+                                AdminForm adminForm = new AdminForm(currentUser);
+                                adminForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                lRegisterResult.Text = "Registration failed. A user with this username already exists.";
+                            }
+
+                        }
+                    else
+                        {
+                            lRegisterResult.Text = "Please retry. Passwords do not match.";
+                        }
+
                     }
                     else
                     {
-                        lRegisterResult.Text = "Registration failed. A user with this username already exists.";
+                        lRegisterResult.Text = "Registration failed. Make sure all fields are entered.";
                     }
                 }
+
                 catch
                 {
                     lRegisterResult.Text = "Registration failed. A user with this username already exists.";
