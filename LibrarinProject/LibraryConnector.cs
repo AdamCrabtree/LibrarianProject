@@ -21,6 +21,8 @@ namespace LibrarinProject
         {
            this.connectorClient = new WebClient();
         }
+
+
         public User Login(String username, String password) //log in existing user
         {
             using (var WebClient = connectorClient){
@@ -160,6 +162,16 @@ namespace LibrarinProject
                 dataToSend["newISBN"] = ISBN;
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editISBN.php", dataToSend);
             }
+        }
+        public void returnBook(string ISBN)
+        {
+            using (var WebClient = connectorClient)
+            {
+                NameValueCollection dataToSend = new NameValueCollection();
+                dataToSend["ISBN"] = ISBN;
+                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/returnBook.php", dataToSend);
+            }
+
         }
     }
 }

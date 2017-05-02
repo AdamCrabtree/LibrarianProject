@@ -29,7 +29,7 @@ namespace LibrarinProject
             {
                 bAddBook.Hide();
                 bEditBook.Hide();
-               
+                bReturnBook.Hide();
             }
             lWelcome.Text = "Welcome " + currentUser.username; 
         }
@@ -75,6 +75,13 @@ namespace LibrarinProject
             this.Hide();
             EditBookForm editBookForm = new EditBookForm(currentUser);
             editBookForm.Show();
+        }
+
+        private void bReturnBook_Click(object sender, EventArgs e)
+        {
+            ReturnBookForm returnBookForm = new ReturnBookForm(currentUser);
+            this.Hide();
+            returnBookForm.Show();
         }
     }
 }

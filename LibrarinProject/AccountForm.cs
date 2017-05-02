@@ -40,7 +40,7 @@ namespace LibrarinProject
         private void requestCheckedOutBooks()
         {
             LibraryConnector checkedOutBooksConnector = new LibrarinProject.LibraryConnector();
-            checkedOutBooksConnector.getCheckedOutBooks(currentUser.user_id);
+            bookList = checkedOutBooksConnector.getCheckedOutBooks(currentUser.user_id);
             ArrayList bookArrayList = new ArrayList(bookList);
             lbBooks.DataSource = bookArrayList;
         }
