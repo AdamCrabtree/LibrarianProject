@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
-/// Admin form for navigation to requesting a book, adding a book, adding a user, add options to edit username/password sometime
+/// Admin form for navigation to requesting a book, adding a book, adding a user, editing password and editing a book, this 
+/// this is basically a holdover form with no internal logic other than showing and navigating to different UI elements
 /// </summary>
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     public partial class AdminForm : Form
     {
@@ -57,7 +58,7 @@ namespace LibrarinProject
 
         private void bLogout_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LibrarinProject.LoginForm();
+            LoginForm loginForm = new LibrarianProject.LoginForm();
             loginForm.Show();
             this.Hide();
         }

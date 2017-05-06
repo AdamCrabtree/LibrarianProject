@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 /// A lot of code is repeated. There might be some way to make it cleaner
 /// </summary>
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     class LibraryConnector
     {

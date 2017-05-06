@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibrarinProject.Properties
+namespace LibrarianProject.Properties
 {
 
 

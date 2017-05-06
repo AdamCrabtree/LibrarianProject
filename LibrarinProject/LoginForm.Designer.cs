@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     partial class LoginForm
     {

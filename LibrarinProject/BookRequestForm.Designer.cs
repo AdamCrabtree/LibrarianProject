@@ -1,4 +1,4 @@
-﻿namespace LibrarinProject
+﻿namespace LibrarianProject
 {
     partial class BookRequestForm
     {

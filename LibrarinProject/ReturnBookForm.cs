@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     public partial class ReturnBookForm : Form
     {
@@ -23,14 +23,14 @@ namespace LibrarinProject
         {
             if (string.IsNullOrWhiteSpace(tbISBN.Text))
             {
-                LibraryConnector returnConnection = new LibrarinProject.LibraryConnector();
+                LibraryConnector returnConnection = new LibrarianProject.LibraryConnector();
                 returnConnection.returnBook(tbISBN.Text);
             }
         }
 
         private void bBack_Click(object sender, EventArgs e)
         {
-            AdminForm adminForm = new LibrarinProject.AdminForm(currentUser);
+            AdminForm adminForm = new LibrarianProject.AdminForm(currentUser);
             this.Hide();
             adminForm.Show();
         }

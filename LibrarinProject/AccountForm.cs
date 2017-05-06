@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     public partial class AccountForm : Form
     {
@@ -26,7 +26,7 @@ namespace LibrarinProject
 
         private void bBack_Click(object sender, EventArgs e)
         {
-            AdminForm adminForm = new LibrarinProject.AdminForm(currentUser);
+            AdminForm adminForm = new LibrarianProject.AdminForm(currentUser);
             adminForm.Show();
             this.Hide();
         }
@@ -39,7 +39,7 @@ namespace LibrarinProject
         }
         private void requestCheckedOutBooks()
         {
-            LibraryConnector checkedOutBooksConnector = new LibrarinProject.LibraryConnector();
+            LibraryConnector checkedOutBooksConnector = new LibrarianProject.LibraryConnector();
             bookList = checkedOutBooksConnector.getCheckedOutBooks(currentUser.user_id);
             ArrayList bookArrayList = new ArrayList(bookList);
             lbBooks.DataSource = bookArrayList;

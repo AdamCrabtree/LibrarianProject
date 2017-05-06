@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //just to hold book object
-namespace LibrarinProject
+namespace LibrarianProject
 {
  
     class Book

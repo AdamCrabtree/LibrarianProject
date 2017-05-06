@@ -1,4 +1,4 @@
-﻿namespace LibrarinProject
+﻿namespace LibrarianProject
 {
     partial class AddBookForm
     {
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tTitle = new System.Windows.Forms.TextBox();
-            this.tAuthor = new System.Windows.Forms.TextBox();
-            this.tISBN = new System.Windows.Forms.TextBox();
+            this.tbTitle = new System.Windows.Forms.TextBox();
+            this.tbAuthor = new System.Windows.Forms.TextBox();
+            this.tbISBN = new System.Windows.Forms.TextBox();
             this.bAddBook = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,26 +39,26 @@
             this.bBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tTitle
+            // tbTitle
             // 
-            this.tTitle.Location = new System.Drawing.Point(81, 90);
-            this.tTitle.Name = "tTitle";
-            this.tTitle.Size = new System.Drawing.Size(100, 20);
-            this.tTitle.TabIndex = 0;
+            this.tbTitle.Location = new System.Drawing.Point(81, 90);
+            this.tbTitle.Name = "tbTitle";
+            this.tbTitle.Size = new System.Drawing.Size(100, 20);
+            this.tbTitle.TabIndex = 0;
             // 
-            // tAuthor
+            // tbAuthor
             // 
-            this.tAuthor.Location = new System.Drawing.Point(81, 116);
-            this.tAuthor.Name = "tAuthor";
-            this.tAuthor.Size = new System.Drawing.Size(100, 20);
-            this.tAuthor.TabIndex = 1;
+            this.tbAuthor.Location = new System.Drawing.Point(81, 116);
+            this.tbAuthor.Name = "tbAuthor";
+            this.tbAuthor.Size = new System.Drawing.Size(100, 20);
+            this.tbAuthor.TabIndex = 1;
             // 
-            // tISBN
+            // tbISBN
             // 
-            this.tISBN.Location = new System.Drawing.Point(81, 142);
-            this.tISBN.Name = "tISBN";
-            this.tISBN.Size = new System.Drawing.Size(100, 20);
-            this.tISBN.TabIndex = 2;
+            this.tbISBN.Location = new System.Drawing.Point(81, 142);
+            this.tbISBN.Name = "tbISBN";
+            this.tbISBN.Size = new System.Drawing.Size(100, 20);
+            this.tbISBN.TabIndex = 2;
             // 
             // bAddBook
             // 
@@ -126,9 +126,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bAddBook);
-            this.Controls.Add(this.tISBN);
-            this.Controls.Add(this.tAuthor);
-            this.Controls.Add(this.tTitle);
+            this.Controls.Add(this.tbISBN);
+            this.Controls.Add(this.tbAuthor);
+            this.Controls.Add(this.tbTitle);
             this.Name = "AddBookForm";
             this.Text = "AddBook";
             this.ResumeLayout(false);
@@ -138,9 +138,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox tTitle;
-        private System.Windows.Forms.TextBox tAuthor;
-        private System.Windows.Forms.TextBox tISBN;
+        private System.Windows.Forms.TextBox tbTitle;
+        private System.Windows.Forms.TextBox tbAuthor;
+        private System.Windows.Forms.TextBox tbISBN;
         private System.Windows.Forms.Button bAddBook;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

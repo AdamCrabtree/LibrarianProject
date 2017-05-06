@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 //launch form everything starts with this and you try to log in
-namespace LibrarinProject
+namespace LibrarianProject
 {
  
     public partial class LoginForm : Form
@@ -26,7 +26,7 @@ namespace LibrarinProject
             loginTuple =  loginAttempt.attemptLogin(tbUsername.Text, tbPassword.Text);
             if (loginTuple.Item2 == true)
             {
-                AdminForm adminForm = new LibrarinProject.AdminForm(loginTuple.Item1);//the admin form takes in the current user to keep track of who's logged in
+                AdminForm adminForm = new LibrarianProject.AdminForm(loginTuple.Item1);//the admin form takes in the current user to keep track of who's logged in
                 adminForm.Show();
                 this.Hide();
             }

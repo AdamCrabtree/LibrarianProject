@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     public partial class EditBookForm : Form
     {

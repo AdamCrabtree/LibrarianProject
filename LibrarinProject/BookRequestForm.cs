@@ -14,7 +14,7 @@ using System.Collections;
 //find a way to make it able to display better
 
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     public partial class BookRequestForm : Form
     {
@@ -55,7 +55,7 @@ namespace LibrarinProject
 
         private void bBack_Click(object sender, EventArgs e)
         {
-            AdminForm adminForm = new LibrarinProject.AdminForm(currentUser);
+            AdminForm adminForm = new LibrarianProject.AdminForm(currentUser);
             adminForm.Show();
             this.Hide();
         }

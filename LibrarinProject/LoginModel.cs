@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //controls login is currently called from loginform returns tuples of User and a boolean whether it succeeded or not
 
-namespace LibrarinProject
+namespace LibrarianProject
 {
     class LoginModel
     {
