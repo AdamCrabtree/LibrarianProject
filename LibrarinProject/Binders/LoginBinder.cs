@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-//controls login is currently called from loginform returns tuples of User and a boolean whether it succeeded or not
+/// <summary>
+///controls login is currently called from loginform returns tuples of User and a boolean whether it succeeded or not. This is just a stateless class so I should 
+///make it static
+///</summary>
 
 namespace LibrarianProject
 {
-    class LoginModel
+    public static class LoginModel
     {
-        public Tuple<User, bool> attemptLogin(String username, String password)
+        static public Tuple<User, bool> attemptLogin(String username, String password)
         {
             LibraryConnector myConnection = new LibraryConnector();
             User currentUser = myConnection.Login(username, password);

@@ -4,11 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// I need to make this static..this thing has no state and is just a collection of methods.
+/// Anyway this just adds the book to the library using LibraryConnector.addBook(title, ISBN, Author) and returns whether everything went okay or not
+///
+/// </summary>
 namespace LibrarianProject
 {
-    class AddBookModel
+    public static class AddBookBinder
     {
-        public string addBook(string ISBN, string title, string author)
+        static public string addBook(string ISBN, string title, string author)
         {
             LibraryConnector addBookConnection = new LibrarianProject.LibraryConnector();
                 if (ISBNCheck(ISBN))
@@ -28,7 +33,7 @@ namespace LibrarianProject
                 return "ISBN is not a valid ISBN!";
                 }
         }
-        private bool ISBNCheck(String isbn)
+        static private bool ISBNCheck(String isbn)
         {
             bool result = false;
 

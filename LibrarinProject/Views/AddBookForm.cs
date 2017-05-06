@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
-/// Add book to database form. Create an AddBookModel that uses String addBook(ISBN, Title, Author) to actually add the book. Set lAddBookResponse to the outcome 
+/// Add book to database form. Create an AddBookBinder that uses String addBook(ISBN, Title, Author) to actually add the book. Set lAddBookResponse to the outcome 
 /// of attempting to add the book
 /// </summary>
 namespace LibrarianProject
@@ -25,8 +25,7 @@ namespace LibrarianProject
 
         private void bAddBook_Click(object sender, EventArgs e)
         {
-            AddBookModel addBookAttempt = new LibrarianProject.AddBookModel();
-            string outcome = addBookAttempt.addBook(tbISBN.Text, tbTitle.Text, tbAuthor.Text);
+            string outcome = AddBookBinder.addBook(tbISBN.Text, tbTitle.Text, tbAuthor.Text);
             lAddBookResponse.Text = outcome;
         }
 

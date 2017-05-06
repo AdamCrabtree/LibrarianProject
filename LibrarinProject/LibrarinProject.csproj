@@ -50,86 +50,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountForm.cs">
+    <Compile Include="Binders\BookRequestBinder.cs" />
+    <Compile Include="Binders\RegisterUserBinder.cs" />
+    <Compile Include="Views\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccountForm.Designer.cs">
+    <Compile Include="Views\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddBookForm.cs">
+    <Compile Include="Views\AddBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddBookForm.Designer.cs">
+    <Compile Include="Views\AddBookForm.Designer.cs">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddBookModel.cs" />
-    <Compile Include="AdminForm.cs">
+    <Compile Include="Binders\AddBookBinder.cs" />
+    <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForm.Designer.cs">
+    <Compile Include="Views\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs" />
-    <Compile Include="BookRequestForm.cs">
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Views\BookRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BookRequestForm.Designer.cs">
+    <Compile Include="Views\BookRequestForm.Designer.cs">
       <DependentUpon>BookRequestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditBookForm.cs">
+    <Compile Include="Views\EditBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditBookForm.Designer.cs">
+    <Compile Include="Views\EditBookForm.Designer.cs">
       <DependentUpon>EditBookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LibraryConnector.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="DatabaseBinders\LibraryConnector.cs" />
+    <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginModel.cs" />
-    <Compile Include="PasswordChangeForm.cs">
+    <Compile Include="Binders\LoginBinder.cs" />
+    <Compile Include="Views\PasswordChangeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PasswordChangeForm.Designer.cs">
+    <Compile Include="Views\PasswordChangeForm.Designer.cs">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterUserForm.cs">
+    <Compile Include="Views\RegisterUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegisterUserForm.Designer.cs">
+    <Compile Include="Views\RegisterUserForm.Designer.cs">
       <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReturnBookForm.cs">
+    <Compile Include="Views\ReturnBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReturnBookForm.Designer.cs">
+    <Compile Include="Views\ReturnBookForm.Designer.cs">
       <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <EmbeddedResource Include="AccountForm.resx">
+    <Compile Include="Models\User.cs" />
+    <EmbeddedResource Include="Views\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddBookForm.resx">
+    <EmbeddedResource Include="Views\AddBookForm.resx">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForm.resx">
+    <EmbeddedResource Include="Views\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookRequestForm.resx">
+    <EmbeddedResource Include="Views\BookRequestForm.resx">
       <DependentUpon>BookRequestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditBookForm.resx">
+    <EmbeddedResource Include="Views\EditBookForm.resx">
       <DependentUpon>EditBookForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PasswordChangeForm.resx">
+    <EmbeddedResource Include="Views\PasswordChangeForm.resx">
       <DependentUpon>PasswordChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,10 +143,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="RegisterUserForm.resx">
+    <EmbeddedResource Include="Views\RegisterUserForm.resx">
       <DependentUpon>RegisterUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReturnBookForm.resx">
+    <EmbeddedResource Include="Views\ReturnBookForm.resx">
       <DependentUpon>ReturnBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -161,6 +163,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
