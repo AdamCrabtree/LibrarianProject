@@ -68,7 +68,7 @@
             // lUsername
             // 
             this.lUsername.AutoSize = true;
-            this.lUsername.Location = new System.Drawing.Point(111, 51);
+            this.lUsername.Location = new System.Drawing.Point(111, 46);
             this.lUsername.Name = "lUsername";
             this.lUsername.Size = new System.Drawing.Size(45, 13);
             this.lUsername.TabIndex = 5;
@@ -77,9 +77,9 @@
             // lbBooks
             // 
             this.lbBooks.FormattingEnabled = true;
-            this.lbBooks.Location = new System.Drawing.Point(53, 154);
+            this.lbBooks.Location = new System.Drawing.Point(1, 154);
             this.lbBooks.Name = "lbBooks";
-            this.lbBooks.Size = new System.Drawing.Size(187, 95);
+            this.lbBooks.Size = new System.Drawing.Size(282, 108);
             this.lbBooks.TabIndex = 6;
             // 
             // label1
