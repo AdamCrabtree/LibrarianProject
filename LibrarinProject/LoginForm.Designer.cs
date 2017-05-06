@@ -31,23 +31,23 @@ namespace LibrarinProject
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.bUsername = new System.Windows.Forms.TextBox();
+            this.tbUsername = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bLogin = new System.Windows.Forms.Button();
-            this.bPassword = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.tFailedLogin = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // bUsername
+            // tbUsername
             // 
-            this.bUsername.AccessibleName = "Username";
-            this.bUsername.Location = new System.Drawing.Point(74, 47);
-            this.bUsername.Name = "bUsername";
-            this.bUsername.Size = new System.Drawing.Size(100, 20);
-            this.bUsername.TabIndex = 0;
-            this.bUsername.Tag = "bUsername";
+            this.tbUsername.AccessibleName = "Username";
+            this.tbUsername.Location = new System.Drawing.Point(74, 47);
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.Size = new System.Drawing.Size(100, 20);
+            this.tbUsername.TabIndex = 0;
+            this.tbUsername.Tag = "bUsername";
             // 
             // bLogin
             // 
@@ -62,14 +62,14 @@ namespace LibrarinProject
             this.bLogin.UseVisualStyleBackColor = true;
             this.bLogin.Click += new System.EventHandler(this.bLogin_Click_1);
             // 
-            // bPassword
+            // tbPassword
             // 
-            this.bPassword.AccessibleName = "bPassword";
-            this.bPassword.Location = new System.Drawing.Point(74, 86);
-            this.bPassword.Name = "bPassword";
-            this.bPassword.Size = new System.Drawing.Size(100, 20);
-            this.bPassword.TabIndex = 1;
-            this.bPassword.Tag = "bPassword";
+            this.tbPassword.AccessibleName = "bPassword";
+            this.tbPassword.Location = new System.Drawing.Point(74, 86);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.Size = new System.Drawing.Size(100, 20);
+            this.tbPassword.TabIndex = 1;
+            this.tbPassword.Tag = "bPassword";
             // 
             // tFailedLogin
             // 
@@ -105,9 +105,9 @@ namespace LibrarinProject
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tFailedLogin);
-            this.Controls.Add(this.bPassword);
+            this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.bLogin);
-            this.Controls.Add(this.bUsername);
+            this.Controls.Add(this.tbUsername);
             this.Name = "LoginForm";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -117,10 +117,10 @@ namespace LibrarinProject
 
         #endregion
 
-        private System.Windows.Forms.TextBox bUsername;
+        private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button bLogin;
-        private System.Windows.Forms.TextBox bPassword;
+        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label tFailedLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
