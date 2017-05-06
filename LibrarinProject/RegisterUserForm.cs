@@ -27,7 +27,7 @@ namespace LibrarinProject
             LibraryConnector registerConnection = new LibrarinProject.LibraryConnector();
             if (cbAdminCheck.Checked) //register admin
             {
-                User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "2", tName.Text );
+                User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "2", tName.Text, tbEmail.Text);
                 if (currentUser.success.Equals("true"))
                 {
                     AdminForm adminForm = new AdminForm(currentUser);
