@@ -42,7 +42,7 @@ namespace LibrarinProject
                 }
             }
         }
-        public User Register(String username, String password, String role, String name) //register new user
+        public User Register(String username, String password, String role, String name, String email) //register new user
         {
             using (var WebClient = connectorClient)
             {
@@ -50,6 +50,7 @@ namespace LibrarinProject
                 dataToSend["username"] = username;
                 dataToSend["password"] = password;
                 dataToSend["role"] = role;
+                dataToSend["email"] = email;
                 dataToSend["name"] = name; //assign all data
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/libraryregister.php", dataToSend); //send data to database
                 string result = System.Text.Encoding.UTF8.GetString(byteResult);

@@ -47,7 +47,7 @@ namespace LibrarinProject
                     {
                         if (tPassword.Text.Equals(tbPassword.Text))
                         {
-                            User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "1", tName.Text);
+                            User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "1", tName.Text, tbEmail.Text);
                             if (currentUser.success.Equals("true"))
                             {
                                 AdminForm adminForm = new AdminForm(currentUser);

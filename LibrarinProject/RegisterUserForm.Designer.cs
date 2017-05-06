@@ -40,11 +40,13 @@
             this.bBack = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.tbEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tName
             // 
-            this.tName.Location = new System.Drawing.Point(127, 32);
+            this.tName.Location = new System.Drawing.Point(127, 51);
             this.tName.Name = "tName";
             this.tName.Size = new System.Drawing.Size(100, 20);
             this.tName.TabIndex = 0;
@@ -58,7 +60,7 @@
             // 
             // tPassword
             // 
-            this.tPassword.Location = new System.Drawing.Point(127, 120);
+            this.tPassword.Location = new System.Drawing.Point(127, 103);
             this.tPassword.Name = "tPassword";
             this.tPassword.PasswordChar = '*';
             this.tPassword.Size = new System.Drawing.Size(100, 20);
@@ -67,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 39);
+            this.label1.Location = new System.Drawing.Point(69, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 3;
@@ -85,7 +87,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 127);
+            this.label3.Location = new System.Drawing.Point(52, 110);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 5;
@@ -93,7 +95,7 @@
             // 
             // bRegister
             // 
-            this.bRegister.Location = new System.Drawing.Point(90, 211);
+            this.bRegister.Location = new System.Drawing.Point(90, 226);
             this.bRegister.Name = "bRegister";
             this.bRegister.Size = new System.Drawing.Size(99, 23);
             this.bRegister.TabIndex = 5;
@@ -104,7 +106,7 @@
             // cbAdminCheck
             // 
             this.cbAdminCheck.AutoSize = true;
-            this.cbAdminCheck.Location = new System.Drawing.Point(55, 191);
+            this.cbAdminCheck.Location = new System.Drawing.Point(55, 203);
             this.cbAdminCheck.Name = "cbAdminCheck";
             this.cbAdminCheck.Size = new System.Drawing.Size(172, 17);
             this.cbAdminCheck.TabIndex = 4;
@@ -131,7 +133,7 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(127, 156);
+            this.tbPassword.Location = new System.Drawing.Point(127, 129);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
@@ -140,17 +142,35 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 163);
+            this.label4.Location = new System.Drawing.Point(15, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "Retype Password";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Location = new System.Drawing.Point(127, 155);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Size = new System.Drawing.Size(100, 20);
+            this.tbEmail.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(69, 158);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Email";
             // 
             // RegisterUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.bBack);
@@ -184,5 +204,7 @@
         private System.Windows.Forms.Button bBack;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbEmail;
+        private System.Windows.Forms.Label label5;
     }
 }
