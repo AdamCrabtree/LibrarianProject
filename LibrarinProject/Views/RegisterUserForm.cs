@@ -24,10 +24,9 @@ namespace LibrarianProject
 
         private void bRegister_Click(object sender, EventArgs e)
         {
-            LibraryConnector registerConnection = new LibrarianProject.LibraryConnector();
             if (cbAdminCheck.Checked) //register admin
             {
-                User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "2", tName.Text, tbEmail.Text);
+                User currentUser = UserBinder.Register(tUsername.Text, tPassword.Text, "2", tName.Text, tbEmail.Text);
                 if (currentUser.success.Equals("true"))
                 {
                     AdminForm adminForm = new AdminForm(currentUser);
@@ -47,7 +46,7 @@ namespace LibrarianProject
                     {
                         if (tPassword.Text.Equals(tbPassword.Text))
                         {
-                            User currentUser = registerConnection.Register(tUsername.Text, tPassword.Text, "1", tName.Text, tbEmail.Text);
+                            User currentUser = UserBinder.Register(tUsername.Text, tPassword.Text, "1", tName.Text, tbEmail.Text);
                             if (currentUser.success.Equals("true"))
                             {
                                 AdminForm adminForm = new AdminForm(currentUser);

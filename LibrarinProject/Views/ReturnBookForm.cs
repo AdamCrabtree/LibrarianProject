@@ -23,8 +23,8 @@ namespace LibrarianProject
         {
             if (string.IsNullOrWhiteSpace(tbISBN.Text))
             {
-                LibraryConnector returnConnection = new LibrarianProject.LibraryConnector();
-                returnConnection.returnBook(tbISBN.Text);
+                LibraryConnector.returnBook(tbISBN.Text);
+                lReturnBookStatus.Text = "Book returned!";
             }
         }
 

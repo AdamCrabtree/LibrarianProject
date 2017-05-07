@@ -14,60 +14,11 @@ using System.Threading.Tasks;
 
 namespace LibrarianProject
 {
-    class LibraryConnector
+    public static class LibraryConnector
     {
-        private  WebClient connectorClient;
-        public LibraryConnector()
+      static public Boolean addBook(String title, String ISBN, String author)
         {
-           this.connectorClient = new WebClient();
-        }
-
-
-        public User Login(String username, String password) //log in existing user
-        {
-            using (var WebClient = connectorClient){
-                NameValueCollection dataToSend = new NameValueCollection();
-                dataToSend["username"] = username;
-                dataToSend["password"] = password;//assigning data
-                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/librarylogin.php", dataToSend); //send data to database
-                string result = System.Text.Encoding.UTF8.GetString(byteResult);
-                try
-                {
-                    User currentUser = JsonConvert.DeserializeObject<User>(result); //deserialize json response into user object to keep track of who's logged in
-                    return currentUser;
-                }
-                catch
-                {
-                    return null; //if the json deserialization fails that means that the login failed so it will return no current user logged in to the Login Form
-                }
-            }
-        }
-        public User Register(String username, String password, String role, String name, String email) //register new user
-        {
-            using (var WebClient = connectorClient)
-            {
-                NameValueCollection dataToSend = new NameValueCollection();
-                dataToSend["username"] = username;
-                dataToSend["password"] = password;
-                dataToSend["role"] = role;
-                dataToSend["email"] = email;
-                dataToSend["name"] = name; //assign all data
-                byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/libraryregister.php", dataToSend); //send data to database
-                string result = System.Text.Encoding.UTF8.GetString(byteResult);
-                try
-                {
-                    User currentUser = JsonConvert.DeserializeObject<User>(result); //deserialize json response into user object to keep track of who's logged in
-                    return currentUser;
-                }
-                    catch
-                {
-                    return null; //if the json deserialization fails that means that the login failed so it will return no current user logged in to the Login Form
-                }
-            }
-        }
-      public Boolean addBook(String title, String ISBN, String author)
-        {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["Title"] = title;
@@ -87,9 +38,9 @@ namespace LibrarianProject
 
             }
         }
-     public List<Book> getBooks()
+     static public List<Book> getBooks()
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["nothing"] = "nothing";
@@ -99,9 +50,9 @@ namespace LibrarianProject
                 return bookList;
             }
         }
-      public void requestBook(string ISBN, string user_id)
+      static public void requestBook(string ISBN, string user_id)
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["ISBN"] = ISBN;
@@ -113,18 +64,9 @@ namespace LibrarianProject
 
             }
         }
-      public void changePassword(string newPassword, string username) {
-                using (var WebClient = connectorClient)
-                {
-                    NameValueCollection dataToSend = new NameValueCollection();
-                    dataToSend["username"] = username;
-                    dataToSend["password"] = newPassword;
-                    byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/changepassword.php", dataToSend);
-                }
-            } 
-        public List<Book> getCheckedOutBooks(string user_id)
+      static public List<Book> getCheckedOutBooks(string user_id)
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["user_id"] = user_id;
@@ -134,9 +76,9 @@ namespace LibrarianProject
                 return bookList;
             }
         }
-        public void editBookTitle(String newTitle, String title)
+      static public void editBookTitle(String newTitle, String title)
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["Title"] = title;
@@ -144,9 +86,9 @@ namespace LibrarianProject
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editTitle.php", dataToSend);
             }
        }
-        public void editBookAuthor(String newAuthor, String author)
+      static  public void editBookAuthor(String newAuthor, String author)
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["Author"] = author;
@@ -154,9 +96,9 @@ namespace LibrarianProject
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editAuthor.php", dataToSend);
             }
         }
-        public void editBookISBN(String newISBN, String ISBN)
+        static public void editBookISBN(String newISBN, String ISBN)
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["ISBN"] = ISBN;
@@ -164,9 +106,9 @@ namespace LibrarianProject
                 byte[] byteResult = WebClient.UploadValues("https://toledopickupapp.000webhostapp.com/editISBN.php", dataToSend);
             }
         }
-        public void returnBook(string ISBN)
+        static public void returnBook(string ISBN)
         {
-            using (var WebClient = connectorClient)
+            using (var WebClient = new WebClient())
             {
                 NameValueCollection dataToSend = new NameValueCollection();
                 dataToSend["ISBN"] = ISBN;

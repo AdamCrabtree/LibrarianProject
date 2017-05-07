@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
@@ -25,7 +18,7 @@ namespace LibrarianProject
 
         private void bAddBook_Click(object sender, EventArgs e)
         {
-            string outcome = AddBookBinder.addBook(tbISBN.Text, tbTitle.Text, tbAuthor.Text);
+            string outcome = BooksBinder.addBook(tbISBN.Text, tbTitle.Text, tbAuthor.Text);
             lAddBookResponse.Text = outcome;
         }
 

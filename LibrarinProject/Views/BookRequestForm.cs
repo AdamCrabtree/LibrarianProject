@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Collections;
-using LibrarinProject.View_Models;
 
 //for requesting books uses list view box and a request button that gets the selected book checked out if its status is in
 
@@ -23,13 +22,13 @@ namespace LibrarianProject
         }
         private void bindBookList()
         {
-            lbBookList.DataSource = BookRequestBinder.getBooksFromDatabase();
+            lbBookList.DataSource = BooksBinder.getBooksFromDatabase();
         }
 
         private void bRequestBook_Click(object sender, EventArgs e)
         {
             Book myBook = (Book) lbBookList.SelectedItem;
-            Tuple<ArrayList, String> requestTuple = BookRequestBinder.checkOutBook(myBook, currentUser, bookList);
+            Tuple<ArrayList, String> requestTuple = BooksBinder.checkOutBook(myBook, currentUser, bookList);
             lbBookList.DataSource = requestTuple.Item1;
             lbookRequestStatus.Text = requestTuple.Item2;
             

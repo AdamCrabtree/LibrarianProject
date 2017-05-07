@@ -32,6 +32,7 @@
             this.tbISBN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bBack = new System.Windows.Forms.Button();
+            this.lReturnBookStatus = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // bReturnBook
@@ -70,11 +71,21 @@
             this.bBack.UseVisualStyleBackColor = true;
             this.bBack.Click += new System.EventHandler(this.bBack_Click);
             // 
+            // lReturnBookStatus
+            // 
+            this.lReturnBookStatus.AutoSize = true;
+            this.lReturnBookStatus.Location = new System.Drawing.Point(86, 183);
+            this.lReturnBookStatus.Name = "lReturnBookStatus";
+            this.lReturnBookStatus.Size = new System.Drawing.Size(35, 13);
+            this.lReturnBookStatus.TabIndex = 4;
+            this.lReturnBookStatus.Text = "label2";
+            // 
             // ReturnBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.lReturnBookStatus);
             this.Controls.Add(this.bBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbISBN);
@@ -92,5 +103,6 @@
         private System.Windows.Forms.TextBox tbISBN;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bBack;
+        private System.Windows.Forms.Label lReturnBookStatus;
     }
 }

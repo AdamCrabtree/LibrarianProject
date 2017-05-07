@@ -15,20 +15,13 @@ namespace LibrarianProject
     {
         User currentUser;
         List<Book> bookList = new List<Book>();
-        LibraryConnector myConnector = new LibraryConnector();
         public EditBookForm(User currentUser)
         {
             this.currentUser = currentUser;
             InitializeComponent();
-            requestBooks();
+            lbBooks.DataSource = BooksBinder.getBooksFromDatabase();
         }
 
-        private void requestBooks()
-        {
-            bookList = myConnector.getBooks(); //open connection with site, get json blob, convert json blob into Book list, return book list into here
-            ArrayList bookArrayList = new ArrayList(bookList); //convert to ArrayList becaues the datasource can't be just a regular list
-            lbBooks.DataSource = bookList;   //set data source items cannot be edited/seleted after data source is set
-        }
 
 
         private void bBack_Click(object sender, EventArgs e)
@@ -43,8 +36,8 @@ namespace LibrarianProject
             if (!string.IsNullOrWhiteSpace(tbBookTitle.Text) && !(lbBooks.SelectedItem == null))
             {
                 Book myBook = (Book)lbBooks.SelectedItem;
-                myConnector.editBookTitle(tbBookTitle.Text, myBook.title);
-                bookList = myConnector.getBooks();
+                LibraryConnector.editBookTitle(tbBookTitle.Text, myBook.title);
+                bookList = LibraryConnector.getBooks();
                 ArrayList updatedBookList = new ArrayList(this.bookList);
                 lbBooks.DataSource = updatedBookList;
             }
@@ -56,8 +49,8 @@ namespace LibrarianProject
             if (!string.IsNullOrWhiteSpace(tbBookAuthor.Text) && !(lbBooks.SelectedItem==null))
             {
                 Book myBook = (Book)lbBooks.SelectedItem;
-                myConnector.editBookAuthor(tbBookAuthor.Text, myBook.author);
-                bookList = myConnector.getBooks();
+                LibraryConnector.editBookAuthor(tbBookAuthor.Text, myBook.author);
+                bookList = LibraryConnector.getBooks();
                 ArrayList updatedBookList = new ArrayList(this.bookList);
                 lbBooks.DataSource = updatedBookList;
             }
@@ -68,8 +61,8 @@ namespace LibrarianProject
             if (!string.IsNullOrWhiteSpace(tbBookISBN.Text) && !(lbBooks.SelectedItem == null))
             {
                 Book myBook = (Book)lbBooks.SelectedItem;
-                myConnector.editBookISBN(tbBookISBN.Text, myBook.ISBN);
-                bookList = myConnector.getBooks();
+                LibraryConnector.editBookISBN(tbBookISBN.Text, myBook.ISBN);
+                bookList = LibraryConnector.getBooks();
                 ArrayList updatedBookList = new ArrayList(this.bookList);
                 lbBooks.DataSource = updatedBookList;
                 

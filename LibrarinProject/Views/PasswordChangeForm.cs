@@ -22,8 +22,7 @@ namespace LibrarianProject
         private void bChangePassword_Click(object sender, EventArgs e)
         {
             if(!(string.IsNullOrWhiteSpace(tpassword.Text) || string.IsNullOrWhiteSpace(tpassword.Text)) && tpassword.Text.Equals(tpassword2.Text)){
-                LibraryConnector pwChangeConnection = new LibraryConnector();
-                pwChangeConnection.changePassword(tpassword.Text, currentUser.username);
+                UserBinder.changePassword(tpassword.Text, currentUser.username);
             }
             else if(string.IsNullOrWhiteSpace(tpassword.Text) || string.IsNullOrWhiteSpace(tpassword.Text)){
                 lStatus.Text = "One of your password entries is empty.";

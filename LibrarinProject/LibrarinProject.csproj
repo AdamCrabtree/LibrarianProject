@@ -50,8 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Binders\BookRequestBinder.cs" />
-    <Compile Include="Binders\RegisterUserBinder.cs" />
+    <Compile Include="Binders\BooksBinder.cs" />
     <Compile Include="Views\AccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +63,6 @@
     <Compile Include="Views\AddBookForm.Designer.cs">
       <DependentUpon>AddBookForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Binders\AddBookBinder.cs" />
     <Compile Include="Views\AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +89,7 @@
     <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Binders\LoginBinder.cs" />
+    <Compile Include="Binders\UserBinder.cs" />
     <Compile Include="Views\PasswordChangeForm.cs">
       <SubType>Form</SubType>
     </Compile>

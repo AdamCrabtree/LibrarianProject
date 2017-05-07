@@ -1,37 +1,61 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/// <summary>
-/// I need to make this static..this thing has no state and is just a collection of methods.
-/// Anyway this just adds the book to the library using LibraryConnector.addBook(title, ISBN, Author) and returns whether everything went okay or not
-///
-/// </summary>
 namespace LibrarianProject
 {
-    public static class AddBookBinder
+    /// <summary>
+    /// Are you trying to do something with books from the database? Well then this class is for you!
+    /// GetBooksFromDatabase returns an arraylist of books to use in whatever list view you want
+    /// checking out books returns a tuple of a string telling your form what happened and an arraylist of books if it actually worked
+    /// add book adds a book to the database after validating the ISBN
+    /// All methods use LibraryConnector to connect to the database
+    /// </summary>
+    static class BooksBinder
     {
+        static public ArrayList getBooksFromDatabase()
+        {
+            List<Book> bookList = LibraryConnector.getBooks(); //open connection with site, get json blob, convert json blob into Book list, return book list into here
+            ArrayList bookArrayList = new ArrayList(bookList); //convert to ArrayList becaues the datasource can't be just a regular list
+            return bookArrayList;
+        }
+        static public Tuple<ArrayList, String> checkOutBook(Book myBook, User currentUser, List<Book> bookList)
+        {
+            if (myBook.status == "in")
+            {
+                LibraryConnector.requestBook(myBook.ISBN, currentUser.user_id);
+                bookList = LibraryConnector.getBooks();
+                ArrayList updatedBookList = new ArrayList(bookList);
+                return Tuple.Create(updatedBookList, "Book requested successfully!");
+
+            }
+            else
+            {
+                ArrayList updatedBookList = new ArrayList(bookList);
+                return Tuple.Create(updatedBookList, "Book already checked out!");
+            }
+        }
         static public string addBook(string ISBN, string title, string author)
         {
-            LibraryConnector addBookConnection = new LibrarianProject.LibraryConnector();
-                if (ISBNCheck(ISBN))
+            if (ISBNCheck(ISBN))
+            {
+                Boolean bookAdded = LibraryConnector.addBook(title, ISBN, author);
+                if (bookAdded)
                 {
-                    Boolean bookAdded = addBookConnection.addBook(title, ISBN, author);
-                    if (bookAdded)
-                    {
                     return "Book added sucessfully!";
-                    }
-                    else
-                    {
-                    return "Book already exists!";
-                    }
                 }
                 else
                 {
-                return "ISBN is not a valid ISBN!";
+                    return "Book already exists!";
                 }
+            }
+            else
+            {
+                return "ISBN is not a valid ISBN!";
+            }
         }
         static private bool ISBNCheck(String isbn)
         {
@@ -121,4 +145,5 @@ namespace LibrarianProject
             return result;
         }
     }
+}
 }

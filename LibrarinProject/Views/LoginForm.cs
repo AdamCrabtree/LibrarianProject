@@ -14,7 +14,6 @@ namespace LibrarianProject
     public partial class LoginForm : Form
     {
         Tuple<User, bool> loginTuple;
-        LoginModel loginAttempt = new LoginModel();
         public LoginForm()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace LibrarianProject
 
         private void bLogin_Click_1(object sender, EventArgs e)
         {
-            loginTuple =  loginAttempt.attemptLogin(tbUsername.Text, tbPassword.Text);
+            loginTuple =  UserBinder.attemptLogin(tbUsername.Text, tbPassword.Text);
             if (loginTuple.Item2 == true)
             {
                 AdminForm adminForm = new LibrarianProject.AdminForm(loginTuple.Item1);//the admin form takes in the current user to keep track of who's logged in
