@@ -9,7 +9,7 @@ them out. The root administrator is allowed to create new users along with all p
 All code is seperated into seperate user forms and specific connection classes. In order to work with books we have a specific static class (BookBinders)
 that handles all use of books with the database. For example:
 
-BookBinders.getBooksFromDatabase() 
+static public ArrayList BookBinders.getBooksFromDatabase() 
 
 returns a list of all possible books in the database regardless of status and is used multiple times throughout the project.
 
@@ -18,10 +18,10 @@ returns a list of all possible books in the database regardless of status and is
 In order to work with users we have a specific static class (UserBinder)
 that handles all use of users with the database. For example:
 
-UserBinder.AttemptLogin(string Username, string Password) 
+static public Tuple<User, bool> UserBinder.AttemptLogin(string Username, string Password) 
 
 
-attempts to login to the database and returns the specific user logged in for future use for permissoins and determining what books are currently checked out. 
+attempts to login to the database and returns the specific user logged in and whether it was successful or not. 
 
 ## Motivation
 
