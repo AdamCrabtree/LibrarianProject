@@ -1,6 +1,6 @@
 ## Synopsis
 
-This  is a full library system written in C# with WPF allowing users to log in, check out books and get notifications when the books are due through email. 
+This  is a full library system written in C# with Windows Forms allowing users to log in, check out books and get notifications when the books are due through email. 
 Administrators can add/edit books and return books along with checking 
 them out. The root administrator can create new users along with all previous privileges.
 
