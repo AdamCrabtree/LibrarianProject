@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Recognition;
+using LibrarinProject.Views;
 
 /// <summary>
 /// Admin form for navigation to requesting a book, adding a book, adding a user, editing password and editing a book, this 
@@ -17,6 +12,7 @@ namespace LibrarianProject
 {
     public partial class AdminForm : Form
     {
+        SpeechRecognitionEngine recEngine = new SpeechRecognitionEngine();
         User currentUser;
         public AdminForm(User currentUser)
         {
@@ -83,6 +79,44 @@ namespace LibrarianProject
             ReturnBookForm returnBookForm = new ReturnBookForm(currentUser);
             this.Hide();
             returnBookForm.Show();
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            Choices adminFormChoices = new Choices();
+            adminFormChoices.Add("help", "add user", "edit book", "open account form", "add book", "add user", "logout");
+            GrammarBuilder gBuilder = new GrammarBuilder();
+            gBuilder.Append(adminFormChoices);
+            Grammar adminFormGrammar = new Grammar(gBuilder);
+            recEngine.LoadGrammarAsync(adminFormGrammar);
+            recEngine.SetInputToDefaultAudioDevice();
+            recEngine.RecognizeAsync(RecognizeMode.Multiple);
+            recEngine.SpeechRecognized += recEngine_SpeechRecognized;
+        }
+
+        private void recEngine_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            switch (e.Result.Text)
+            {
+                case "help":
+                    break;
+                case "add user":
+                    break;
+                case "edit book":
+                    break;
+                case "open account form":
+                    break;
+                case "add book":
+                    break;
+                case "logout":
+                    break;
+            }
+        }
+
+        private void bHelp_Click(object sender, EventArgs e)
+        {
+            HelpForm newHelpForm = new HelpForm();
+            newHelpForm.Show();
         }
     }
 }

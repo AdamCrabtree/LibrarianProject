@@ -36,6 +36,7 @@
             this.bAccount = new System.Windows.Forms.Button();
             this.bEditBook = new System.Windows.Forms.Button();
             this.bReturnBook = new System.Windows.Forms.Button();
+            this.bHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bAddBook
@@ -118,11 +119,22 @@
             this.bReturnBook.UseVisualStyleBackColor = true;
             this.bReturnBook.Click += new System.EventHandler(this.bReturnBook_Click);
             // 
+            // bHelp
+            // 
+            this.bHelp.Location = new System.Drawing.Point(203, 70);
+            this.bHelp.Name = "bHelp";
+            this.bHelp.Size = new System.Drawing.Size(68, 23);
+            this.bHelp.TabIndex = 7;
+            this.bHelp.Text = "Help";
+            this.bHelp.UseVisualStyleBackColor = true;
+            this.bHelp.Click += new System.EventHandler(this.bHelp_Click);
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.bHelp);
             this.Controls.Add(this.bReturnBook);
             this.Controls.Add(this.bEditBook);
             this.Controls.Add(this.bAccount);
@@ -133,6 +145,7 @@
             this.Controls.Add(this.bAddBook);
             this.Name = "AdminForm";
             this.Text = "AdminForm";
+            this.Load += new System.EventHandler(this.AdminForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,5 +161,6 @@
         private System.Windows.Forms.Button bAccount;
         private System.Windows.Forms.Button bEditBook;
         private System.Windows.Forms.Button bReturnBook;
+        private System.Windows.Forms.Button bHelp;
     }
 }
