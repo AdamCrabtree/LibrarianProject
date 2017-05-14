@@ -35,15 +35,20 @@ you will either need to change the start up form with an existing user, but you 
 
 Login Form: Just enter username and password
 
+![alt text](https://cloud.githubusercontent.com/assets/6658898/26036190/216274c6-38a7-11e7-842e-123c80588e33.PNG)
 --------------------------
 
 
 
 Main Navigation form: Go to different parts of the program. Certain buttons only show up if you're root.
+![alt text](https://cloud.githubusercontent.com/assets/6658898/26036191/223f47a2-38a7-11e7-8403-8326b12b3bb2.PNG)
+
 
 -------------------
 
 Request Book Form: A list of all books in the database. Click a specific book and then click request. Most of the books currently in the database don't actually exist but in a real world scenario that can be changed.
+
+![alt text](https://cloud.githubusercontent.com/assets/6658898/26036192/22f0bb5e-38a7-11e7-81c4-67e8345f4b5d.PNG)
 
 
 ----------------
@@ -51,7 +56,7 @@ Request Book Form: A list of all books in the database. Click a specific book an
 
 Register User Form: Only root can add new users. Other than that registration is rather straightforward with a username, password, name, and email. 
 
-
+![alt text](https://cloud.githubusercontent.com/assets/6658898/26036193/2397bad0-38a7-11e7-90d1-c4e9e277263a.PNG)
 
 
 -------------------------
