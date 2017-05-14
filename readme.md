@@ -41,6 +41,16 @@ Login Form: Just enter username and password
 
 Main Navigation form: Go to different parts of the program. Certain buttons only show up if you're root.
 
+-------------------
+
+Request Book Form: A list of all books in the database. Click a specific book and then click request. Most of the books currently in the database don't actually exist but in a real world scenario that can be changed.
+
+
+----------------
+
+
+Register User Form: Only root can add new users. Other than that registration is rather straightforward with a username, password, name, and email. 
+
 
 
 
