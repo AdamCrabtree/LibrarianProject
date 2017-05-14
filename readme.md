@@ -31,6 +31,21 @@ In order to learn C# with WPF, mySQL, PHP, and RESTful web design. This program 
 In order to build the project you need to have a visual studio installation and just pull it or clone/download. In order to run the project though
 you will either need to change the start up form with an existing user, but you will encounter errors, or login with the root account and add your own user for testing.
 
+## Usage And Screenshots
+
+Login Form: Just enter username and password
+
+--------------------------
+
+
+
+Main Navigation form: Go to different parts of the program. Certain buttons only show up if you're root.
+
+
+
+
+-------------------------
+
 ## License
 
 MIT License
