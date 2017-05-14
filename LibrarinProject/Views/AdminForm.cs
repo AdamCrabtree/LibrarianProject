@@ -99,16 +99,34 @@ namespace LibrarianProject
             switch (e.Result.Text)
             {
                 case "help":
+                    HelpForm newHelpForm = new LibrarinProject.Views.HelpForm();
+                    newHelpForm.Show();
                     break;
                 case "add user":
+                    RegisterUserForm newRegisterUserForm = new RegisterUserForm(currentUser);
+                    newRegisterUserForm.Show();
+                    this.Hide();
                     break;
                 case "edit book":
+                    EditBookForm newEditBookForm = new EditBookForm(currentUser);
+                    newEditBookForm.Show();
+                    this.Hide();
                     break;
                 case "open account form":
+                    AccountForm myAccountForm = new AccountForm(currentUser);
+                    myAccountForm.Show();
+                    this.Hide();
                     break;
                 case "add book":
+                    AddBookForm myAddBookForm = new AddBookForm(currentUser);
+                    myAddBookForm.Show();
+                    this.Hide();
                     break;
                 case "logout":
+                    LoginForm myLoginForm = new LibrarianProject.LoginForm();
+                    currentUser = null;
+                    myLoginForm.Show();
+                    this.Hide();
                     break;
             }
         }

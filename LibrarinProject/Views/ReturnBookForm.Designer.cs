@@ -76,9 +76,8 @@
             this.lReturnBookStatus.AutoSize = true;
             this.lReturnBookStatus.Location = new System.Drawing.Point(86, 183);
             this.lReturnBookStatus.Name = "lReturnBookStatus";
-            this.lReturnBookStatus.Size = new System.Drawing.Size(35, 13);
+            this.lReturnBookStatus.Size = new System.Drawing.Size(0, 13);
             this.lReturnBookStatus.TabIndex = 4;
-            this.lReturnBookStatus.Text = "label2";
             // 
             // ReturnBookForm
             // 

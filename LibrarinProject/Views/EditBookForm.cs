@@ -68,5 +68,10 @@ namespace LibrarianProject
                 
             }
         }
+
+        public static implicit operator EditBookForm(RegisterUserForm v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
